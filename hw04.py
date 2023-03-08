@@ -65,13 +65,13 @@ def planet(mass):
     """Construct a planet of some mass."""
     assert mass > 0
     "*** YOUR CODE HERE ***"
-
+    return ['planet', mass]
 
 def mass(w):
     """Select the mass of a planet."""
     assert is_planet(w), 'must call mass on a planet'
     "*** YOUR CODE HERE ***"
-
+    return w[1]
 
 def is_planet(w):
     """Whether w is a planet."""
@@ -127,6 +127,9 @@ def balanced(m):
     True
     """
     "*** YOUR CODE HERE ***"
+    if is_planet(m):
+      return True
+    else:
 
 
 def totals_tree(m):
@@ -249,12 +252,12 @@ def interval(a, b):
 def lower_bound(x):
     """Return the lower bound of interval x."""
     "*** YOUR CODE HERE ***"
-
+    return x[0]
 
 def upper_bound(x):
     """Return the upper bound of interval x."""
     "*** YOUR CODE HERE ***"
-
+    return x[1]
 
 def str_interval(x):
     """Return a string representation of interval x."""
@@ -283,7 +286,8 @@ def sub_interval(x, y):
     """Return the interval that contains the difference between any value in x
     and any value in y."""
     "*** YOUR CODE HERE ***"
-
+    lower = lower_bound(x) - lower_bound(y)
+    upper = upper_bound(x) - lower_bound(y)
 
 def div_interval(x, y):
     """Return the interval that contains the quotient of any value in x divided by
